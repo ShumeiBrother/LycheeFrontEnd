@@ -1,7 +1,12 @@
+import { Fragment } from "react";
+import LeftBar from "./component/LeftBar";
+import Navbar from "./component/Navbar/Navbar";
 
 function App() {
   return (
-    <div>Hello Word!</div>
+    <Fragment>
+      <Navbar />
+    </Fragment>
   );
 }
 
