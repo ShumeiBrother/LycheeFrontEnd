@@ -1,8 +1,4 @@
-import { ButtonGroup, Button, Typography, styled } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
-import { Fragment } from "react";
-import SVGOrange from "../UIComponent/SVG/SVGOrange";
-import { grey } from "@mui/material/colors";
+import { ButtonGroup, Button, styled } from "@mui/material";
 
 const StyledFunctionBar = styled("div")({});
 

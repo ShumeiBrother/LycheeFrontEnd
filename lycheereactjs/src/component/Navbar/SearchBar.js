@@ -1,7 +1,5 @@
-import { IconButton, InputBase, Typography, styled } from "@mui/material";
+import { IconButton, InputBase, styled } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import { Fragment } from "react";
-import SVGOrange from "../UIComponent/SVG/SVGOrange";
 import { grey } from "@mui/material/colors";
 
 const StyledSearchBar = styled("div")(({ theme }) => ({
@@ -10,7 +8,6 @@ const StyledSearchBar = styled("div")(({ theme }) => ({
   borderRadius: 30,
   borderColor: "green",
   backgroundColor: grey[100]
-  //borderRadius:5
 }));
 
 const StyledInput = styled(InputBase)((theme)=>({
