@@ -14,7 +14,7 @@ function Logo() {
       </Box>
       <StyledTypography
         variant="h3"
-        sx={{ display: { sm: "block", xs: "none" } }}
+        sx={{ display: { sm: "block", xs: "none" }}}
       >
         Lychee
       </StyledTypography>

@@ -1,8 +1,4 @@
-import {
-  AppBar,
-  Toolbar,
-  styled,
-} from "@mui/material";
+import { AppBar, Toolbar, styled } from "@mui/material";
 import { Fragment } from "react";
 import Logo from "./Logo";
 import SearchBar from "./SearchBar";
@@ -16,16 +12,14 @@ const StyledToolbar = styled(Toolbar)({
 
 function Navbar() {
   return (
-    <Fragment>
-      <AppBar>
-        <StyledToolbar>
-          <Logo />
-          <SearchBar />
-          <FunctionBar/>
-          <CustomerInfo/>
-        </StyledToolbar>
-      </AppBar>
-    </Fragment>
+    <AppBar>
+      <StyledToolbar>
+        <Logo />
+        <SearchBar />
+        <FunctionBar />
+        <CustomerInfo />
+      </StyledToolbar>
+    </AppBar>
   );
 }
 

@@ -1,6 +1,5 @@
 import { createTheme } from "@mui/material/styles";
-
-const theme = createTheme({
+const ConfiguredTheme = createTheme({
   palette: {
     primary: {
       light: "#757ce8",
@@ -14,10 +13,16 @@ const theme = createTheme({
       dark: "#ba000d",
       contrastText: "#000",
     },
+    orange : {
+      main:"#E8630A"
+    },
+    gold:{
+      main:"#FFD700"
+    }
   },
   shape: {
     borderRadius: 30,
   },
 });
 
-export default theme;
+export default ConfiguredTheme;

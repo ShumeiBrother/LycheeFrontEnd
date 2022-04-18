@@ -1,5 +1,7 @@
 import { Button, Typography, styled } from "@mui/material";
 import { orange } from "@mui/material/colors";
+import React, { useState } from "react";
+
 const CustomerInfoBar = styled("div")({
   display: "flex",
   flexDirection: "row",
@@ -13,12 +15,29 @@ const CustomerName = styled(Typography)({
 });
 
 function CustomerInfo() {
+  const [isLogin, setLogin] = useState(false);
   return (
     <CustomerInfoBar>
-      <CustomerName sx={{ display: { sm: "block", xs: "none" } }}>Hoang Thang</CustomerName>
-      <Button variant="outlined" color="success">
-        Login
-      </Button>
+      {isLogin && (
+        <CustomerName
+          onClick={() => {
+            setLogin(false);
+          }}
+        >
+          Hoang Thang
+        </CustomerName>
+      )}
+      {!isLogin && (
+        <Button
+          variant="outlined"
+          color="success"
+          onClick={() => {
+            setLogin(true);
+          }}
+        >
+          Login
+        </Button>
+      )}
     </CustomerInfoBar>
   );
 }
