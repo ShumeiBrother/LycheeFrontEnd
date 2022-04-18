@@ -5,8 +5,6 @@ export default () => {
       width="40.347"
       height="40.101"
       viewBox="0 0 20.347 24.101"
-      fill="currentColor"
-      class="max-h-full max-w-full"
       color="orange"
     >
       <g id="Grocery" transform="translate(-39.481 0.052)">
@@ -17,7 +15,7 @@ export default () => {
           transform="translate(-294.289 -380.346)"
           fill="currentColor"
           stroke="currentColor"
-          stroke-width="0.1"
+          strokeWidth="0.1"
         ></path>
         <path
           id="Path_17387"
@@ -26,7 +24,7 @@ export default () => {
           transform="translate(-0.5)"
           fill="currentColor"
           stroke="currentColor"
-          stroke-width="0.1"
+          strokeWidth="0.1"
         ></path>
       </g>
     </svg>
