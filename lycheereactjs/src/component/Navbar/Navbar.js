@@ -12,14 +12,16 @@ const StyledToolbar = styled(Toolbar)({
 
 function Navbar() {
   return (
-    <AppBar>
-      <StyledToolbar>
-        <Logo />
-        <SearchBar />
-        <FunctionBar />
-        <CustomerInfo />
-      </StyledToolbar>
-    </AppBar>
+    <div>
+      <AppBar position="sticky" sx={{ backgroundColor: "red" }}>
+        <StyledToolbar>
+          <Logo />
+          <SearchBar />
+          <FunctionBar />
+          <CustomerInfo />
+        </StyledToolbar>
+      </AppBar>
+    </div>
   );
 }
 

@@ -12,16 +12,19 @@ import avocado from "../static/images/products/avocado.jpeg";
 const ProductThumbnail = () => {
   return (
     <Card sx={{ maxWidth: 300 ,maxHeight:300}}>
-      <CardActionArea onClick={()=>alert("hello")}>
+      <CardActionArea>
         <CardMedia
           component="img"
           height="140"
           image={avocado}
-          alt="green avocado"
+          alt="green avocado" 
+          onClick={()=>alert("hello")}
         />
         <CardContent>
           <Rating
             name="simple-controlled"
+            value={4.5}
+            precision={0.1}
             //   value={value}
             //   onChange={(event, newValue) => {
             //     setValue(newValue);

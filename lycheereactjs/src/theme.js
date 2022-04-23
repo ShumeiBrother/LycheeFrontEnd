@@ -21,7 +21,7 @@ const ConfiguredTheme = createTheme({
     }
   },
   shape: {
-    borderRadius: 30,
+    borderRadius: 7,
   },
 });
 
