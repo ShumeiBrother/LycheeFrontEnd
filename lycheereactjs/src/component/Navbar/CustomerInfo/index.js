@@ -1,6 +1,7 @@
-import { Button, Typography, styled } from "@mui/material";
+import { Button, Typography, styled, Avatar } from "@mui/material";
 import { orange } from "@mui/material/colors";
 import React, { useState } from "react";
+import cumeoImage from "../../../static/images/avatar/cumeo.jpeg";
 
 const CustomerInfoBar = styled("div")({
   display: "flex",
@@ -19,13 +20,13 @@ function CustomerInfo() {
   return (
     <CustomerInfoBar>
       {isLogin && (
-        <CustomerName
+        <Avatar
+          alt="Hoang Thang"
+          src={cumeoImage}
           onClick={() => {
             setLogin(false);
           }}
-        >
-          Hoang Thang
-        </CustomerName>
+        />
       )}
       {!isLogin && (
         <Button

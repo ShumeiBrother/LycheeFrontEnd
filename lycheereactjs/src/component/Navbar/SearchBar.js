@@ -3,10 +3,9 @@ import SearchIcon from "@mui/icons-material/Search";
 import { grey } from "@mui/material/colors";
 
 const StyledSearchBar = styled("div")(({ theme }) => ({
-  color: "red",
-  marginLeft: 10,
+  display:"flex",
+  marginInline: 10,
   borderRadius: 30,
-  borderColor: "green",
   backgroundColor: grey[100]
 }));
 
@@ -18,7 +17,7 @@ function SearchBar() {
   return (
     <StyledSearchBar>
       <StyledInput
-        sx={{ width: { sm: 200, xs: 100 } }}
+        sx={{ width: "70%"}}
         placeholder="Search..."
         inputProps={{ "aria-label": "search products" }}
       />

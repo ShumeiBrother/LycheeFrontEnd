@@ -1,28 +1,20 @@
-import { Fragment } from "react";
-import LeftBar from "./component/LeftBar/LeftBar";
-import Navbar from "./component/Navbar/Navbar";
-import {
-  Button,
-  Drawer,
-  Grid,
-  Modal,
-  ThemeProvider,
-  Typography,
-} from "@mui/material";
+import { Stack, ThemeProvider } from "@mui/material";
 import ConfiguredTheme from "./theme";
+import Navbar from "./component/Navbar";
+import LeftBar from "./component/LeftBar";
+import ProductList from "./component/ProductList";
 import { Box } from "@mui/system";
-import { Stack } from "@mui/material";
-import ProductThumbnail from "./component/ProductThumbnail";
-import TestComponent from "./component/TestComponent";
-import TestComponent2 from "./component/TestComponent2";
 
 function App() {
   return (
     <ThemeProvider theme={ConfiguredTheme}>
-      <Navbar />
-      {/* <LeftBar/> */}
-      {/* <TestComponent/> */}
-      <TestComponent2/>
+      <Box>
+        <Navbar />
+        <Stack direction={"row"}>
+          <LeftBar />
+          <ProductList/>
+        </Stack>
+      </Box>
     </ThemeProvider>
   );
 }
