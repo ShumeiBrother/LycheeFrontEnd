@@ -1,7 +1,7 @@
-import { Button, Typography, styled, Avatar } from "@mui/material";
+import { Button, Typography, styled } from "@mui/material";
 import { orange } from "@mui/material/colors";
 import React, { useState } from "react";
-import cumeoImage from "../../../static/images/avatar/cumeo.jpeg";
+import UserAvatar from "./UserAvatar";
 
 const CustomerInfoBar = styled("div")({
   display: "flex",
@@ -17,17 +17,12 @@ const CustomerName = styled(Typography)({
 
 function CustomerInfo() {
   const [isLogin, setLogin] = useState(false);
+  function HandlerLogOut(){
+    setLogin(false);
+  }
   return (
     <CustomerInfoBar>
-      {isLogin && (
-        <Avatar
-          alt="Hoang Thang"
-          src={cumeoImage}
-          onClick={() => {
-            setLogin(false);
-          }}
-        />
-      )}
+      {isLogin && <UserAvatar LogOut={HandlerLogOut}/>}
       {!isLogin && (
         <Button
           variant="outlined"
