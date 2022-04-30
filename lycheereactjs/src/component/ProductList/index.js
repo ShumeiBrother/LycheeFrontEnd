@@ -32,7 +32,6 @@ function ProductList() {
           </Grid>
         </Grid>
       </StyledBox>
-      {/* <div sx={{height:1000}}></div> */}
     </Fragment>
   );
 }

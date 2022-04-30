@@ -1,9 +1,8 @@
-import { AppBar, Toolbar, styled } from "@mui/material";
-import { Fragment } from "react";
-import Logo from "./Logo";
-import SearchBar from "./SearchBar";
-import FunctionBar from "./FunctionBar";
+import { AppBar, styled, Toolbar } from "@mui/material";
 import CustomerInfo from "./CustomerInfo";
+import FunctionBar from "./FunctionBar";
+import Logo from "./Logo";
+import MiddleBar from "./MiddleBar";
 
 const StyledToolbar = styled(Toolbar)({
   backgroundColor: "white",
@@ -16,7 +15,7 @@ function Navbar() {
       <AppBar position="sticky" sx={{ backgroundColor: "red" }}>
         <StyledToolbar>
           <Logo />
-          <SearchBar />
+          <MiddleBar/>
           <FunctionBar />
           <CustomerInfo />
         </StyledToolbar>

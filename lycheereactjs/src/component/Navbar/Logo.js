@@ -1,6 +1,6 @@
-import { Box, Typography, styled } from "@mui/material";
+import { Box, styled, Typography } from "@mui/material";
 import { Fragment } from "react";
-import SVGOrange from "../UIComponent/SVG/SVGOrange";
+import lycheeLogo from "../../static/images/logo/lycheeLogo.png";
 const StyledTypography = styled(Typography)({
   color: "red",
   marginLeft: 10,
@@ -9,12 +9,12 @@ const StyledTypography = styled(Typography)({
 function Logo() {
   return (
     <Fragment>
-      <Box sx={{ display: { sm: "none", xs: "block" } }}>
-        <SVGOrange />
+      <Box sx={{ display: { md: "none", xs: "block" }, padding: 0 }}>
+        <img height={60} width={60} src={lycheeLogo}></img>
       </Box>
       <StyledTypography
         variant="h3"
-        sx={{ display: { sm: "block", xs: "none" }}}
+        sx={{ display: { md: "block", xs: "none" } }}
       >
         Lychee
       </StyledTypography>

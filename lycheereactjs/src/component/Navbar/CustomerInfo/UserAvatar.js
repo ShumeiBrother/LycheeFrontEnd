@@ -1,3 +1,5 @@
+import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import {
   Avatar,
   Divider,
@@ -8,8 +10,6 @@ import {
 } from "@mui/material";
 import { Fragment, useState } from "react";
 import cumeoImage from "../../../static/images/avatar/cumeo.jpeg";
-import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
-import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 
 function UserAvatar(props) {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -25,7 +25,7 @@ function UserAvatar(props) {
       <Avatar alt="Hoang Thang" src={cumeoImage} onClick={handleClick} />
       <Menu open={open} onClose={handleClose} anchorEl={anchorEl}>
         <MenuItem>
-          <Avatar src={cumeoImage}/>
+          <Avatar src={cumeoImage} />
           <Typography variant="h6" ml={1}>
             Profile
           </Typography>

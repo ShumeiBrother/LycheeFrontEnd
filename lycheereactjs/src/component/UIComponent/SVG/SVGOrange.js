@@ -1,22 +1,13 @@
-export default () => {
+import { SvgIcon } from "@mui/material";
+export default (props) => {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="40.347"
-      height="40.101"
+      width={props.size}
+      height={props.size}
+      color={props.color}
       viewBox="0 0 20.347 24.101"
-      color="orange"
     >
       <g id="Grocery" transform="translate(-39.481 0.052)">
-        <path
-          id="Path_17386"
-          data-name="Path 17386"
-          d="M349.261,399.988a.469.469,0,1,1,.461-.385A.473.473,0,0,1,349.261,399.988Z"
-          transform="translate(-294.289 -380.346)"
-          fill="currentColor"
-          stroke="currentColor"
-          strokeWidth="0.1"
-        ></path>
         <path
           id="Path_17387"
           data-name="Path 17387"

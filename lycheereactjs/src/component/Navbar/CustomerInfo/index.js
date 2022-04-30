@@ -9,20 +9,14 @@ const CustomerInfoBar = styled("div")({
   alignItems: "center",
 });
 
-const CustomerName = styled(Typography)({
-  color: orange[700],
-  marginRight: 20,
-  fontSize: 20,
-});
-
 function CustomerInfo() {
   const [isLogin, setLogin] = useState(false);
-  function HandlerLogOut(){
+  function HandlerLogOut() {
     setLogin(false);
   }
   return (
     <CustomerInfoBar>
-      {isLogin && <UserAvatar LogOut={HandlerLogOut}/>}
+      {isLogin && <UserAvatar LogOut={HandlerLogOut} />}
       {!isLogin && (
         <Button
           variant="outlined"
