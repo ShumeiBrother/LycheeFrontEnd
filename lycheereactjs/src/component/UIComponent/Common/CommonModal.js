@@ -10,7 +10,7 @@ const StyledBox = styled(Box)({
   padding: 10,
 });
 
-const CommonModal = (props) => {
+function CommonModal(props) {
   return (
     <Modal
       sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
@@ -19,6 +19,6 @@ const CommonModal = (props) => {
       <StyledBox>{props.children}</StyledBox>
     </Modal>
   );
-};
+}
 
 export default CommonModal;

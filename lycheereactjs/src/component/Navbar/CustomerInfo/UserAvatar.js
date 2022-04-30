@@ -14,12 +14,12 @@ import cumeoImage from "../../../static/images/avatar/cumeo.jpeg";
 function UserAvatar(props) {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-  const handleClick = (event) => {
+  function handleClick(event) {
     setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
+  }
+  function handleClose() {
     setAnchorEl(null);
-  };
+  }
   return (
     <Fragment>
       <Avatar alt="Hoang Thang" src={cumeoImage} onClick={handleClick} />
