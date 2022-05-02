@@ -3,6 +3,7 @@ import ProductThumbnail from "./ProductThumbnail";
 import { grey } from "@mui/material/colors";
 import styled from "@emotion/styled";
 import { Fragment } from "react";
+import Products from "../../dummy_data/Products";
 
 const StyledBox = styled(Box)({
   display: "flex",
@@ -18,18 +19,13 @@ function ProductList() {
     <Fragment>
       <StyledBox flex={5}>
         <Grid container spacing={2}>
-          <Grid item xs={12} sm={6} md={4}>
-            <ProductThumbnail />
-          </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <ProductThumbnail />
-          </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <ProductThumbnail />
-          </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <ProductThumbnail />
-          </Grid>
+          {Products.map((product) => {
+            return (
+              <Grid item xs={12} sm={6} md={4}>
+                <ProductThumbnail key={product.id} product={product} />
+              </Grid>
+            );
+          })}
         </Grid>
       </StyledBox>
     </Fragment>

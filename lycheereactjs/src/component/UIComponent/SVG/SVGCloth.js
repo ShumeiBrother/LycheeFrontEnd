@@ -14,7 +14,7 @@ export default (props) => {
           transform="translate(0 0.5)"
           fill="currentColor"
           stroke="currentColor"
-          stroke-width="0.5"
+          strokeWidth="0.5"
         ></path>
       </g>
     </svg>
