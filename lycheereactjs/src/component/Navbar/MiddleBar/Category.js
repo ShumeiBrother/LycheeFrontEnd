@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { MenuItem, Select, Stack, Typography } from "@mui/material";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import SVGCloth from "../../UIComponent/SVG/SVGCloth";
 import SVGDoKho from "../../UIComponent/SVG/SVGDoKho";
@@ -12,14 +13,19 @@ const StyledSelect = styled(Select)({
 const StyledItem = styled(MenuItem)({});
 
 function Category() {
+  const [category,setCategory] = useState("cloth");
+  function handlerChange(event){
+    setCategory(event.target.value);
+  }
   return (
     <StyledSelect
-      value={"orange"}
+      value={category}
       inputProps={{ "aria-label": "Without label" }}
+      onChange={handlerChange}
     >
-      <StyledItem value={"orange"}>
+      <StyledItem value={"green"}>
         <Link
-          to="/products/hoa-qua"
+          to="/products/?category=green"
           style={{ textDecoration: "none", color: "black" }}
         >
           <Stack direction="row" alignItems={"center"} spacing={1}>
@@ -30,9 +36,9 @@ function Category() {
           </Stack>
         </Link>
       </StyledItem>
-      <StyledItem>
+      <StyledItem value={"cloth"}>
         <Link
-          to="/products/quan-ao"
+          to="/products/?category=cloth"
           style={{ textDecoration: "none", color: "black" }}
         >
           <Stack direction="row" alignItems={"center"} spacing={1}>
@@ -43,9 +49,9 @@ function Category() {
           </Stack>
         </Link>
       </StyledItem>
-      <StyledItem>
+      <StyledItem value={"dehydrated"}>
         <Link
-          to="/products/do-kho"
+          to="/products/?category=dehydrated"
           style={{ textDecoration: "none", color: "black" }}
         >
           <Stack direction="row" alignItems={"center"} spacing={1}>

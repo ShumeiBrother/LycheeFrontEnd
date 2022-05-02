@@ -1,6 +1,6 @@
 const Products = [
   {
-    id: "1",
+    id: "p1",
     category: "green",
     name: "Bơ",
     price: 250,
@@ -10,7 +10,7 @@ const Products = [
     image: "avocado.jpeg",
   },
   {
-    id: "2",
+    id: "p2",
     category: "green",
     name: "Rau Rền",
     price: 100,
@@ -19,7 +19,7 @@ const Products = [
     image: "broccoli.jpeg",
   },
   {
-    id: "3",
+    id: "p3",
     category: "green",
     name: "Tỏi",
     price: 250,
@@ -28,7 +28,7 @@ const Products = [
     image: "garlic.jpeg",
   },
   {
-    id: "4",
+    id: "p4",
     category: "cloth",
     name: "Dép Dọ",
     price: 250,
@@ -37,7 +37,7 @@ const Products = [
     image: "depdo.jpeg",
   },
   {
-    id: "5",
+    id: "p5",
     category: "cloth",
     name: "Tông Lào",
     price: 250,
@@ -46,7 +46,7 @@ const Products = [
     image: "tonglao.jpeg",
   },
   {
-    id: "6",
+    id: "p6",
     category: "cloth",
     name: "Quần Què",
     price: 250,
@@ -55,7 +55,7 @@ const Products = [
     image: "quanque.jpeg",
   },
   {
-    id: "7",
+    id: "p7",
     category: "cloth",
     name: "Áo Què",
     price: 250,
@@ -64,7 +64,7 @@ const Products = [
     image: "aoque.jpeg",
   },
   {
-    id: "8",
+    id: "p8",
     category: "dehydrated",
     name: "Bánh Mì Mốc",
     price: 500,
@@ -73,7 +73,7 @@ const Products = [
     image: "banhmimoc.jpeg",
   },
   {
-    id: "9",
+    id: "p9",
     category: "dehydrated",
     name: "Bò Khô",
     price: 250,

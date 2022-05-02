@@ -10,7 +10,7 @@ function LeftBar() {
     <Box flex={1} sx={{ display: { xs: "none", sm: "block" } }}>
       <Stack direction={"column"} spacing={3} sx={{ padding: 3 }}>
         <Link
-          to="/products/hoa-qua"
+          to="/products/?category=green"
           style={{ textDecoration: "none", color: "black" }}
         >
           <Stack direction="row" alignItems={"center"} spacing={1}>
@@ -26,7 +26,7 @@ function LeftBar() {
         </Link>
         <Divider />
         <Link
-          to="/products/do-kho"
+          to="/products/?category=dehydrated"
           style={{ textDecoration: "none", color: "black" }}
         >
           <Stack direction="row" alignItems={"center"} spacing={1}>
@@ -43,7 +43,7 @@ function LeftBar() {
         <Divider />
 
         <NavLink
-          to="/products/quan-ao"
+          to="/products/?category=cloth"
           style={{ textDecoration: "none", color: "black" }}
         >
           <Stack direction="row" alignItems={"center"} spacing={1}>

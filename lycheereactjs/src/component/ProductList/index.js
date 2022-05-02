@@ -1,9 +1,10 @@
-import { Box, Grid, Stack } from "@mui/material";
-import ProductThumbnail from "./ProductThumbnail";
-import { grey } from "@mui/material/colors";
 import styled from "@emotion/styled";
+import { Box, Grid } from "@mui/material";
+import { grey } from "@mui/material/colors";
 import { Fragment } from "react";
+import { useLocation } from "react-router-dom";
 import Products from "../../dummy_data/Products";
+import ProductThumbnail from "./ProductThumbnail";
 
 const StyledBox = styled(Box)({
   display: "flex",
@@ -15,17 +16,26 @@ const StyledBox = styled(Box)({
 });
 
 function ProductList() {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const category = queryParams.get("category");
+  let productsFiltered = [...Products];
+  if (category)
+    productsFiltered = productsFiltered.filter(
+      (product) => product.category === category
+    );
   return (
     <Fragment>
       <StyledBox flex={5}>
         <Grid container spacing={2}>
-          {Products.map((product) => {
+          {productsFiltered.map((product) => {
             return (
-              <Grid item xs={12} sm={6} md={4}>
-                <ProductThumbnail key={product.id} product={product} />
+              <Grid item xs={12} sm={6} md={4} key={product.id}>
+                <ProductThumbnail product={product} />
               </Grid>
             );
           })}
+          <Box sx={{ height:{xs:550,sm:450} }}></Box>
         </Grid>
       </StyledBox>
     </Fragment>
