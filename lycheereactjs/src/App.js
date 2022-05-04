@@ -1,9 +1,11 @@
-import { Stack, ThemeProvider } from "@mui/material";
+import { Stack, ThemeProvider, Typography } from "@mui/material";
 import ConfiguredTheme from "./theme";
 import Navbar from "./component/Navbar";
 import LeftBar from "./component/LeftBar";
 import ProductList from "./component/ProductList";
 import { Box } from "@mui/system";
+import CommonModal from "./component/UIComponent/Common/CommonModal";
+import { Fragment } from "react";
 
 function App() {
   return (
@@ -12,7 +14,7 @@ function App() {
         <Navbar />
         <Stack direction={"row"}>
           <LeftBar />
-          <ProductList/>
+          <ProductList />
         </Stack>
       </Box>
     </ThemeProvider>

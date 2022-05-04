@@ -1,8 +1,7 @@
-import { Button, Typography, styled } from "@mui/material";
-import { orange } from "@mui/material/colors";
-import React, { useState } from "react";
+import { Button, styled } from "@mui/material";
+import React, { Fragment, useState } from "react";
+import Login from "./Login";
 import UserAvatar from "./UserAvatar";
-
 const CustomerInfoBar = styled("div")({
   display: "flex",
   flexDirection: "row",
@@ -11,24 +10,28 @@ const CustomerInfoBar = styled("div")({
 
 function CustomerInfo() {
   const [isLogin, setLogin] = useState(false);
+  const [isOpen, setOpen] = React.useState(false);
   function HandlerLogOut() {
     setLogin(false);
   }
   return (
-    <CustomerInfoBar>
-      {isLogin && <UserAvatar LogOut={HandlerLogOut} />}
-      {!isLogin && (
-        <Button
-          variant="outlined"
-          color="success"
-          onClick={() => {
-            setLogin(true);
-          }}
-        >
-          Login
-        </Button>
-      )}
-    </CustomerInfoBar>
+    <Fragment>
+      <CustomerInfoBar>
+        {isLogin && <UserAvatar LogOut={HandlerLogOut} />}
+        {!isLogin && (
+          <Button
+            variant="outlined"
+            color="success"
+            onClick={() => {
+              setOpen(true);
+            }}
+          >
+            Login
+          </Button>
+        )}
+      </CustomerInfoBar>
+      <Login open={isOpen} setOpen={setOpen} setLogin={setLogin} />
+    </Fragment>
   );
 }
 
