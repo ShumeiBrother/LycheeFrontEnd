@@ -15,7 +15,7 @@ function Navbar() {
       <AppBar position="sticky" sx={{ backgroundColor: "red" }}>
         <StyledToolbar>
           <Logo />
-          <MiddleBar/>
+          <MiddleBar />
           <FunctionBar />
           <CustomerInfo />
         </StyledToolbar>

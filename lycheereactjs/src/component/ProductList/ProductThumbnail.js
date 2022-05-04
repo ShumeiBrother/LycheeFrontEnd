@@ -7,23 +7,24 @@ import {
   Rating,
 } from "@mui/material";
 
-import avocado from "../../static/images/products/avocado.jpeg";
-
-function ProductThumbnail() {
+function ProductThumbnail(props) {
+  const { product } = props;
+  const linkImage = require("../../static/images/products/".concat(
+    product.image
+  ));
   return (
-    <Card sx={{ maxWidth: 500, maxHeight: 500 }}>
+    <Card sx={{ maxWidth: 500, height: 310 }}>
       <CardActionArea>
         <CardMedia
           component="img"
           height="140"
-          image={avocado}
-          alt="green avocado"
+          image={linkImage}
+          alt={product.category}
           onClick={() => alert("hello")}
         />
         <CardContent>
           <Rating
-            name="simple-controlled"
-            value={4.5}
+            value={product.rating}
             precision={0.1}
             //   value={value}
             //   onChange={(event, newValue) => {
@@ -31,15 +32,12 @@ function ProductThumbnail() {
             //   }}
           />
           <Typography variant="h6" color="red">
-            ¥250
+            ¥{product.price}
           </Typography>
           <Typography gutterBottom variant="h5" component="div" color="#E8630A">
-            Avocado
+            {product.name}
           </Typography>
-          <Typography variant="body2">
-            Đây là quả bơ, dùng để làm sinh tố hoặc ghép vào với nhau để thành
-            rapper.
-          </Typography>
+          <Typography variant="body2">{product.description}</Typography>
         </CardContent>
       </CardActionArea>
     </Card>

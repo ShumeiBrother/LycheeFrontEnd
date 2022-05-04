@@ -1,21 +1,27 @@
-import { Stack, ThemeProvider, Typography } from "@mui/material";
-import ConfiguredTheme from "./theme";
-import Navbar from "./component/Navbar";
-import LeftBar from "./component/LeftBar";
-import ProductList from "./component/ProductList";
+import { Stack, ThemeProvider } from "@mui/material";
 import { Box } from "@mui/system";
-import CommonModal from "./component/UIComponent/Common/CommonModal";
-import { Fragment } from "react";
+import { Route, Routes } from "react-router-dom";
+import LeftBar from "./component/LeftBar";
+import Navbar from "./component/Navbar/";
+import ProductList from "./component/ProductList";
+import ConfiguredTheme from "./theme";
 
 function App() {
   return (
     <ThemeProvider theme={ConfiguredTheme}>
       <Box>
         <Navbar />
-        <Stack direction={"row"}>
-          <LeftBar />
-          <ProductList />
-        </Stack>
+        <Routes>
+          <Route
+            path="/products/*"
+            element={
+              <Stack direction={"row"}>
+                <LeftBar />
+                <ProductList />
+              </Stack>
+            }
+          />
+        </Routes>
       </Box>
     </ThemeProvider>
   );
