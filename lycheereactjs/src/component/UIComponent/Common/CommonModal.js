@@ -11,6 +11,7 @@ const CommonModal = (props) => {
     borderRadius: 20,
     padding: 10,
     width: props.boxProps.width,
+    overflow:"scroll"
   });
   const { isOpen, setOpen } = props;
   return (
