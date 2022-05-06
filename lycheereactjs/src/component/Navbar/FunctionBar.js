@@ -4,7 +4,7 @@ const StyledFunctionBar = styled("div")({});
 
 function FunctionBar() {
   return (
-    <StyledFunctionBar sx={{ display: { sm: "block", xs: "none" } }}>
+    <StyledFunctionBar sx={{ display: { md: "block", xs: "none" } }}>
       <ButtonGroup variant="text" aria-label="text button group">
         <Button>Shop</Button>
         <Button>FAQ</Button>

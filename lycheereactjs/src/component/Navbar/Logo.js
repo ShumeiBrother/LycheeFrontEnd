@@ -3,7 +3,7 @@ import { Fragment } from "react";
 import lycheeLogo from "../../static/images/logo/lycheeLogo.png";
 const StyledTypography = styled(Typography)({
   color: "red",
-  marginLeft: 10,
+  marginLeft: 0,
 });
 
 function Logo() {

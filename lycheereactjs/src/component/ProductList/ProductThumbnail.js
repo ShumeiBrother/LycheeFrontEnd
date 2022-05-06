@@ -7,6 +7,7 @@ import {
   Rating,
   Stack,
   IconButton,
+  Fab,
 } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { Box } from "@mui/system";
@@ -36,7 +37,7 @@ function ProductThumbnail(props) {
               <Rating
                 value={product.rating}
                 precision={0.1}
-                sx={{fontSize:30}}
+                sx={{ fontSize: 30 }}
                 //   value={value}
                 //   onChange={(event, newValue) => {
                 //     setValue(newValue);

@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, IconButton } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { Fragment } from "react";
 import { useLocation } from "react-router-dom";
@@ -35,7 +35,7 @@ function ProductList() {
               </Grid>
             );
           })}
-          <Box sx={{ height:{xs:550,sm:450} }}></Box>
+          <Box sx={{ height: { xs: 550, sm: 450 } }}></Box>
         </Grid>
       </StyledBox>
     </Fragment>

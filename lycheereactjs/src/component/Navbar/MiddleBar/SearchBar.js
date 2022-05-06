@@ -82,12 +82,16 @@ function SearchBar(props) {
       </StyledSearchBar>
       {!showSearch && (
         <IconButton
-          sx={{ p: "10px", display: { xs: "flex", sm: "none" } }}
+          sx={{ p: "0px" ,display: { xs: "flex", sm: "none", fontSize: 35} }}
           onClick={handleMobileClickSearch}
-          size="large"
+          // size="large"
           color="info"
         >
-          <SearchIcon />
+          <SearchIcon
+            sx={{
+              fontSize: 30,
+            }}
+          />
         </IconButton>
       )}
     </Fragment>

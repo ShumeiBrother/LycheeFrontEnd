@@ -1,4 +1,5 @@
 import { AppBar, styled, Toolbar } from "@mui/material";
+import Cart from "./Cart";
 import CustomerInfo from "./CustomerInfo";
 import FunctionBar from "./FunctionBar";
 import Logo from "./Logo";
@@ -6,7 +7,7 @@ import MiddleBar from "./MiddleBar";
 
 const StyledToolbar = styled(Toolbar)({
   backgroundColor: "white",
-  justifyContent: "space-between",
+  justifyContent: "space-around",
 });
 
 function Navbar() {
@@ -17,6 +18,7 @@ function Navbar() {
           <Logo />
           <MiddleBar />
           <FunctionBar />
+          {/* <Cart /> */}
           <CustomerInfo />
         </StyledToolbar>
       </AppBar>
