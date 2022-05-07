@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Fragment } from "react";
 import Cart from "../Cart";
 import Category from "./Category";
+import FunctionBar from "./FunctionBar";
 import SearchBar from "./SearchBar";
 
 function MiddleBar() {
@@ -13,6 +14,7 @@ function MiddleBar() {
         focusSearchBar={focusSearchBar}
         setFocusSearchBar={setFocusSearchBar}
       />
+      <FunctionBar />
       {!focusSearchBar && <Cart />}
     </Fragment>
   );
