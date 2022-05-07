@@ -1,20 +1,18 @@
-import {
-  Button,
-  Divider,
-  Fab,
-  Link,
-  Rating,
-  Stack,
-  Typography,
-} from "@mui/material";
-import { Box } from "@mui/system";
-import CommonModal from "../../UIComponent/Common/CommonModal";
-import avocadoImage from "../../../static/images/products/avocado.jpeg";
 import AddCircleOutlinedIcon from "@mui/icons-material/AddCircleOutlined";
 import RemoveCircleOutlinedIcon from "@mui/icons-material/RemoveCircleOutlined";
+import {
+    Button,
+    Divider, Link,
+    Rating,
+    Stack,
+    Typography
+} from "@mui/material";
+import { Box } from "@mui/system";
+import avocadoImage from "../../../static/images/products/avocado.jpeg";
+import CommonModal from "../../UIComponent/Common/CommonModal";
 function Cart() {
   return (
-    <CommonModal open={true} width={400}>
+    <CommonModal open={false} width={400}>
       <Box display="flex" paddingInline={2}>
         <Stack>
           <img

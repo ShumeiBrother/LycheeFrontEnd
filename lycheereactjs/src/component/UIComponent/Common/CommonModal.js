@@ -8,8 +8,7 @@ const CommonModal = (props) => {
   const StyledBox = styled(Box)({
     backgroundColor: "white",
     width: width,
-    height: "80vh",
-    maxHeight: 900,
+    maxHeight: "80vh",
     borderRadius: 20,
     padding: 10,
     overflow: "scroll",
