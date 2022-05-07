@@ -1,17 +1,18 @@
 import styled from "@emotion/styled";
 import { Modal } from "@mui/material";
 import { Box } from "@mui/system";
+import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 
 const CommonModal = (props) => {
+  const width = props.width || 700;
   const StyledBox = styled(Box)({
     backgroundColor: "white",
-    width: 700,
+    width: width,
     height: "80vh",
     maxHeight: 900,
     borderRadius: 20,
     padding: 10,
-    width: props.boxProps.width,
-    overflow:"scroll"
+    overflow: "scroll",
   });
   const { isOpen, setOpen } = props;
   return (
@@ -22,7 +23,17 @@ const CommonModal = (props) => {
       }}
       {...props}
     >
-      <StyledBox>{props.children}</StyledBox>
+      <StyledBox>
+        <Box display="flex" justifyContent="end">
+          <CloseOutlinedIcon
+            fontSize="large"
+            onClick={() => {
+              setOpen(false);
+            }}
+          />
+        </Box>
+        {props.children}
+      </StyledBox>
     </Modal>
   );
 };

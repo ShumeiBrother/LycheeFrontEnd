@@ -10,8 +10,8 @@ function Login(props) {
   const { setLogin, setOpen, open } = props;
   const [isSignUp, setSignUp] = React.useState(false);
   return (
-    <CommonModal boxProps={{ width: 350 }} open={open} setOpen={setOpen}>
-      <Box justifyContent="center" display="flex" paddingBlock={3}>
+    <CommonModal width={350} open={open} setOpen={setOpen}>
+      <Box justifyContent="center" display="flex">
         <img src={lycheeLogo} height={120} width={120} />
       </Box>
 
