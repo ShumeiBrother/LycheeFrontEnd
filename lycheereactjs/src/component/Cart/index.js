@@ -1,18 +1,25 @@
 import AddCircleOutlinedIcon from "@mui/icons-material/AddCircleOutlined";
 import RemoveCircleOutlinedIcon from "@mui/icons-material/RemoveCircleOutlined";
 import {
-    Button,
-    Divider, Link,
-    Rating,
-    Stack,
-    Typography
+  Button,
+  Divider,
+  Link,
+  Rating,
+  Stack,
+  Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import avocadoImage from "../../../static/images/products/avocado.jpeg";
-import CommonModal from "../../UIComponent/Common/CommonModal";
+import avocadoImage from "../../static/images/products/avocado.jpeg";
+import CommonModal from "../UIComponent/Common/CommonModal";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { cartAction } from "../../Redux/CartSlice";
 function Cart() {
+  const dispatch = useDispatch();
+  const open = useSelector((redux) => redux.cart.open);
+  const setOpen = (openState) => dispatch(cartAction.setOpen(openState));
   return (
-    <CommonModal open={false} width={400}>
+    <CommonModal open={open} setOpen={setOpen} width={400}>
       <Box display="flex" paddingInline={2}>
         <Stack>
           <img

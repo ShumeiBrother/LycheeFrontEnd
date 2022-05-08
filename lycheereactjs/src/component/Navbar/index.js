@@ -1,5 +1,4 @@
 import { AppBar, styled, Toolbar } from "@mui/material";
-import Cart from "./Cart";
 import CustomerInfo from "./CustomerInfo";
 import Logo from "./Logo";
 import MiddleBar from "./MiddleBar";
@@ -18,7 +17,6 @@ function Navbar() {
           <MiddleBar />
           {/* <Cart /> */}
           <CustomerInfo />
-          <Cart></Cart>
         </StyledToolbar>
       </AppBar>
     </div>

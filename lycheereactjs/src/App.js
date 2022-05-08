@@ -1,6 +1,7 @@
 import { Stack, ThemeProvider } from "@mui/material";
 import { Box } from "@mui/system";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
+import Cart from "./component/Cart";
 import LeftBar from "./component/LeftBar";
 import Navbar from "./component/Navbar/";
 import ProductList from "./component/ProductList";
@@ -12,9 +13,10 @@ function App() {
   return (
     <ThemeProvider theme={ConfiguredTheme}>
       <Box>
-        <Navbar />
+        <Navbar /> <Cart />
         <MetaMessenger />
         <Routes>
+          <Route path="/" element={<Navigate to="/products" />}></Route>
           <Route
             path="/products/*"
             element={

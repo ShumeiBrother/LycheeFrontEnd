@@ -29,6 +29,7 @@ const CommonModal = (props) => {
             onClick={() => {
               setOpen(false);
             }}
+            sx={{ cursor: "pointer" }}
           />
         </Box>
         {props.children}
