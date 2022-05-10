@@ -14,7 +14,7 @@ function App() {
     <ThemeProvider theme={ConfiguredTheme}>
       <Box>
         <Navbar /> <Cart />
-        <MetaMessenger />
+        {/* <MetaMessenger /> */}
         <Routes>
           <Route path="/" element={<Navigate to="/products" />}></Route>
           <Route

@@ -2,6 +2,28 @@ import { createSlice, current } from "@reduxjs/toolkit";
 
 const InitialState = {
   open: false,
+  items: [
+    {
+      id: "p3",
+      category: "green",
+      name: "Tỏi",
+      price: 250,
+      rating: 2.5,
+      description: "Đây là hung khí của ca sĩ Châu Việt Cường",
+      image: "garlic.jpeg",
+      quantity: 2,
+    },
+    {
+      id: "p3",
+      category: "green",
+      name: "Tỏi",
+      price: 250,
+      rating: 2.5,
+      description: "Đây là hung khí của ca sĩ Châu Việt Cường",
+      image: "garlic.jpeg",
+      quantity: 2,
+    },
+  ],
 };
 const CartSlice = createSlice({
   name: "cart",
@@ -17,6 +39,14 @@ const CartSlice = createSlice({
       console.log("cometosetopen");
       state.open = action.payload;
     },
+    // addToCart(state, action) {
+    //   const item = action.payload.item;
+    //   const quantity = action.payload.quantity;
+    //   const index = state.items.findIndex((x) => x.id === item.id);
+    //   if (index > -1) state.items[index].quantity += quantity;
+    //   else state.items.push(item);
+    // },
+    // removeFromCart(state, action) {},
   },
 });
 
