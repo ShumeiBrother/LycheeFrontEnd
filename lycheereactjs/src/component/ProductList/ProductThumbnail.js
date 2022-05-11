@@ -11,12 +11,18 @@ import {
 } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { Box } from "@mui/system";
+import { useDispatch } from "react-redux";
+import { cartAction } from "../../Redux/CartSlice";
 
 function ProductThumbnail(props) {
+  const dispatch = useDispatch();
   const { product } = props;
   const linkImage = require("../../static/images/products/".concat(
     product.image
   ));
+  function handleAddItem(item) {
+    dispatch(cartAction.addToCart({ item: item, quantity: 1 }));
+  }
   return (
     <Card sx={{ maxWidth: 500, height: 310 }}>
       <CardActionArea>
@@ -52,6 +58,7 @@ function ProductThumbnail(props) {
                 <AddShoppingCartIcon
                   sx={{ width: 50, height: 50 }}
                   color="success"
+                  onClick={() => handleAddItem(product)}
                 />
               </IconButton>
             </Stack>

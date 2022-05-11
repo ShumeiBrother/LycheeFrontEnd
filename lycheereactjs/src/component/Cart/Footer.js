@@ -4,13 +4,14 @@ import { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
 function Footer() {
   const items = useSelector((redux) => redux.cart.items);
-  const totalQuantity = items.reduce(
-    (prev, current) => prev.quantity + current.quantity
-  );
-  const totalPrice = items.reduce(
-    (prev, current) =>
-      prev.price * prev.quantity + current.price * current.quantity
-  );
+  const totalQuantity = useSelector((redux) => redux.cart.totalQuantity);
+  const totalPrice = useSelector((redux) => redux.cart.totalPrice);
+  // let totalQuantity = 0;
+  // let totalPrice = 0;
+  // items.forEach((item) => {
+  //   totalQuantity += item.quantity;
+  //   totalPrice += item.quantity * item.price;
+  // });
   return (
     <Fragment>
       <Box sx={{ position: "sticky", bottom: 0, backgroundColor: "white" }}>

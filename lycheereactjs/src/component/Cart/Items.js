@@ -5,10 +5,21 @@ import { Box } from "@mui/system";
 import { Fragment } from "react";
 import avocadoImage from "../../static/images/products/avocado.jpeg";
 import { useDispatch, useSelector } from "react-redux";
+import { cartAction } from "../../Redux/CartSlice";
 
 function Items() {
+  const dispatch = useDispatch();
   const items = useSelector((redux) => redux.cart.items);
   console.log(items);
+  function handleAddItem(item) {
+    dispatch(cartAction.addToCart({ item: item, quantity: 1 }));
+  }
+  function handleDecreaseItem(item) {
+    dispatch(cartAction.decreaseFromCart({ item: item, quantity: 1 }));
+  }
+  function handleRemoveItem(item) {
+    dispatch(cartAction.removeFromCart({ item: item }));
+  }
   return items.map((item) => {
     const linkImage = require("../../static/images/products/".concat(
       item.image
@@ -42,12 +53,24 @@ function Items() {
               <Typography variant="h5" color="brown">
                 ¥{item.price}
               </Typography>
-              <Stack direction="row" spacing={2} mt={2}>
-                <RemoveCircleOutlinedIcon color="error" sx={{ fontSize: 40 }} />
+              <Stack direction="row" spacing={1} mt={2}>
+                <RemoveCircleOutlinedIcon
+                  color="error"
+                  sx={{ fontSize: 40 }}
+                  onClick={() => {
+                    handleDecreaseItem(item);
+                  }}
+                />
                 <Typography variant="h4" textAlign="center">
                   {item.quantity}
                 </Typography>
-                <AddCircleOutlinedIcon color="success" sx={{ fontSize: 40 }} />
+                <AddCircleOutlinedIcon
+                  color="success"
+                  sx={{ fontSize: 40 }}
+                  onClick={() => {
+                    handleAddItem(item);
+                  }}
+                />
               </Stack>
             </Stack>
           </Stack>
@@ -55,7 +78,12 @@ function Items() {
             <Link fontSize={20} color="primary" sx={{ cursor: "pointer" }}>
               Save Later
             </Link>
-            <Link fontSize={20} color="error" sx={{ cursor: "pointer" }}>
+            <Link
+              fontSize={20}
+              color="error"
+              sx={{ cursor: "pointer" }}
+              onClick={() => handleRemoveItem(item)}
+            >
               Remove
             </Link>
           </Stack>
