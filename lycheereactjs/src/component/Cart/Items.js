@@ -10,7 +10,6 @@ import { cartAction } from "../../Redux/CartSlice";
 function Items() {
   const dispatch = useDispatch();
   const items = useSelector((redux) => redux.cart.items);
-  console.log(items);
   function handleAddItem(item) {
     dispatch(cartAction.addToCart({ item: item, quantity: 1 }));
   }
