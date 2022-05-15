@@ -19,6 +19,15 @@ function Items() {
   function handleRemoveItem(item) {
     dispatch(cartAction.removeFromCart({ item: item }));
   }
+
+  //When cart is empty
+  if (items.length == 0)
+    return (
+      <Typography variant="h6" color="red" my={3}>
+        Không có sản phẩm nào trong giỏ
+      </Typography>
+    );
+
   return items.map((item) => {
     const linkImage = require("../../static/images/products/".concat(
       item.image
@@ -87,7 +96,6 @@ function Items() {
             </Link>
           </Stack>
         </Box>
-        <Divider sx={{ my: 1 }} />
       </Fragment>
     );
   });
