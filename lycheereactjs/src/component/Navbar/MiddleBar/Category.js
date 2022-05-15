@@ -13,8 +13,8 @@ const StyledSelect = styled(Select)({
 const StyledItem = styled(MenuItem)({});
 
 function Category() {
-  const [category,setCategory] = useState("cloth");
-  function handlerChange(event){
+  const [category, setCategory] = useState("cloth");
+  function handlerChange(event) {
     setCategory(event.target.value);
   }
   return (
@@ -25,7 +25,7 @@ function Category() {
     >
       <StyledItem value={"green"}>
         <Link
-          to="/products/?category=green"
+          to="/product/?category=green"
           style={{ textDecoration: "none", color: "black" }}
         >
           <Stack direction="row" alignItems={"center"} spacing={1}>
@@ -38,7 +38,7 @@ function Category() {
       </StyledItem>
       <StyledItem value={"cloth"}>
         <Link
-          to="/products/?category=cloth"
+          to="/product/?category=cloth"
           style={{ textDecoration: "none", color: "black" }}
         >
           <Stack direction="row" alignItems={"center"} spacing={1}>
@@ -51,7 +51,7 @@ function Category() {
       </StyledItem>
       <StyledItem value={"dehydrated"}>
         <Link
-          to="/products/?category=dehydrated"
+          to="/product/?category=dehydrated"
           style={{ textDecoration: "none", color: "black" }}
         >
           <Stack direction="row" alignItems={"center"} spacing={1}>

@@ -1,23 +1,25 @@
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import {
   Card,
   CardActionArea,
-  CardMedia,
   CardContent,
-  Typography,
+  CardMedia,
+  IconButton,
+  Link,
   Rating,
   Stack,
-  IconButton,
-  Fab,
+  Typography,
 } from "@mui/material";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { Box } from "@mui/system";
 import { useDispatch } from "react-redux";
-import { cartAction } from "../../Redux/CartSlice";
+import { cartAction } from "../../../Redux/CartSlice";
+import { useNavigate } from "react-router-dom";
 
 function ProductThumbnail(props) {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { product } = props;
-  const linkImage = require("../../static/images/products/".concat(
+  const linkImage = require("../../../static/images/products/".concat(
     product.image
   ));
   function handleAddItem(item) {
@@ -31,7 +33,7 @@ function ProductThumbnail(props) {
           height="140"
           image={linkImage}
           alt={product.category}
-          onClick={() => alert("hello")}
+          onClick={() => navigate("/product/detail/?id=" + product.id)}
         />
         <CardContent>
           <Box

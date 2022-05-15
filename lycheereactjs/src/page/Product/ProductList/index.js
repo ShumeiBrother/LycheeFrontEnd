@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
-import { Box, Grid, IconButton } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { Fragment } from "react";
 import { useLocation } from "react-router-dom";
-import Products from "../../dummy_data/Products";
+import Products from "../../../dummy_data/Products";
 import ProductThumbnail from "./ProductThumbnail";
 
 const StyledBox = styled(Box)({
@@ -19,6 +19,7 @@ function ProductList() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const category = queryParams.get("category");
+  console.log(category);
   let productsFiltered = [...Products];
   if (category)
     productsFiltered = productsFiltered.filter(
