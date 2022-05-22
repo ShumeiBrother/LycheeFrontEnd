@@ -1,9 +1,8 @@
 import AddCircleOutlinedIcon from "@mui/icons-material/AddCircleOutlined";
 import RemoveCircleOutlinedIcon from "@mui/icons-material/RemoveCircleOutlined";
-import { Divider, Link, Rating, Stack, Typography } from "@mui/material";
+import { Link, Rating, Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { Fragment } from "react";
-import avocadoImage from "../../static/images/products/avocado.jpeg";
 import { useDispatch, useSelector } from "react-redux";
 import { cartAction } from "../../Redux/CartSlice";
 
@@ -29,7 +28,7 @@ function Items() {
     );
 
   return items.map((item) => {
-    const linkImage = require("../../static/images/products/".concat(
+    const linkImage = require("../../Static/Images/Products/".concat(
       item.image
     ));
     return (

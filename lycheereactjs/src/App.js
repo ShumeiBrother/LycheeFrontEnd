@@ -1,7 +1,7 @@
 import { ThemeProvider } from "@mui/material";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./Layout";
-import ProductPage from "./page/Product/";
+import ProductPage from "./Page/Products/";
 import ConfiguredTheme from "./theme";
 
 function App() {

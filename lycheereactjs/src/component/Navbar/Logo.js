@@ -1,6 +1,6 @@
 import { Box, styled, Typography } from "@mui/material";
 import { Fragment } from "react";
-import lycheeLogo from "../../static/images/logo/lycheeLogo.png";
+import lycheeLogo from "../../Static/Images/Logo/lycheeLogo.png";
 const StyledTypography = styled(Typography)({
   color: "red",
   marginLeft: 0,

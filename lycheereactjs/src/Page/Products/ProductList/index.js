@@ -1,9 +1,10 @@
 import styled from "@emotion/styled";
 import { Box, Grid } from "@mui/material";
 import { grey } from "@mui/material/colors";
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import Products from "../../../dummy_data/Products";
+import Products from "../../../DUMMY_DATA/Products";
+import productApi from "../../../HTTP_Request/ProductsAPI";
 import ProductThumbnail from "./ProductThumbnail";
 
 const StyledBox = styled(Box)({
@@ -16,6 +17,9 @@ const StyledBox = styled(Box)({
 });
 
 function ProductList() {
+  useEffect(() => {
+    productApi.getAllProductThumbnails();
+  }, []);
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const category = queryParams.get("category");

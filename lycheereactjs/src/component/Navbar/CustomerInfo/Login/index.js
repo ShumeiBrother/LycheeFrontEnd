@@ -1,7 +1,7 @@
 import { Divider, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
-import lycheeLogo from "../../../../static/images/logo/lycheeLogo.png";
+import lycheeLogo from "../../../../Static/Images/Logo/lycheeLogo.png";
 import CommonModal from "../../../UIComponent/Common/CommonModal";
 import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";

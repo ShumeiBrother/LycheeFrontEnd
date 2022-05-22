@@ -5,7 +5,7 @@ import { Rating, Stack, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { Box } from "@mui/system";
 import { useLocation } from "react-router-dom";
-import Products from "../../dummy_data/Products";
+import Products from "../../DUMMY_DATA/Products";
 
 const StyledBox = styled(Box)({
   display: "flex",
@@ -37,7 +37,7 @@ function ProductDetail() {
   if (productId)
     product = products.filter((product) => product.id === productId)[0];
   console.log(product);
-  const linkImage = require("../../static/images/products/".concat(
+  const linkImage = require("../../Static/Images/Products/".concat(
     product.image
   ));
   return (

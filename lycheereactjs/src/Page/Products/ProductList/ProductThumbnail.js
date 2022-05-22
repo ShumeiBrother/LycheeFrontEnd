@@ -19,7 +19,7 @@ function ProductThumbnail(props) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { product } = props;
-  const linkImage = require("../../../static/images/products/".concat(
+  const linkImage = require("../../../Static/Images/Products/".concat(
     product.image
   ));
   function handleAddItem(item) {

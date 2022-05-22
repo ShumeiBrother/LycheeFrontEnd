@@ -3,8 +3,8 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { Button, InputAdornment, Stack, TextField } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
-import facebookLogo from "../../../../static/images/logo/facebookLogo.png";
-import googleLogo from "../../../../static/images/logo/googleLogo.png";
+import facebookLogo from "../../../../Static/Images/Logo/facebookLogo.png";
+import googleLogo from "../../../../Static/Images/Logo/googleLogo.png";
 
 function LoginForm(props) {
   const { setLogin, setOpen, setSignUp } = props;

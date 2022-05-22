@@ -1,6 +1,6 @@
 import { Stack } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
-import LeftBar from "../../component/LeftBar";
+import LeftBar from "../../Component/LeftBar";
 import ProductDetail from "./ProductDetail";
 import ProductList from "./ProductList";
 

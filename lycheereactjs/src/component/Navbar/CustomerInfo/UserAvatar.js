@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Fragment, useState } from "react";
-import cumeoImage from "../../../static/images/avatar/cumeo.jpeg";
+import cumeoImage from "../../../Static/Images/Avatar/cumeo.jpeg";
 
 function UserAvatar(props) {
   const [anchorEl, setAnchorEl] = useState(null);
