@@ -1,6 +1,6 @@
 import axiosClient from "./axiosClient";
 class ProductApi {
-  getAllProductThumbnails = (params) => {
+  getAllProductThumbnails = async (params) => {
     const url = "/product-thumbnails";
     return axiosClient.get(url, { params });
   };

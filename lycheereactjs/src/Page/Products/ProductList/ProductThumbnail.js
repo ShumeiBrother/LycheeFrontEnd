@@ -19,9 +19,9 @@ function ProductThumbnail(props) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { product } = props;
-  const linkImage = require("../../../Static/Images/Products/".concat(
-    product.image
-  ));
+  // const linkImage = require("../../../Static/Images/Products/".concat(
+  //   product.image
+  // ));
   function handleAddItem(item) {
     dispatch(cartAction.addToCart({ item: item, quantity: 1 }));
   }
@@ -31,9 +31,10 @@ function ProductThumbnail(props) {
         <CardMedia
           component="img"
           height="140"
-          image={linkImage}
-          alt={product.category}
-          onClick={() => navigate("/product/detail/?id=" + product.id)}
+          // image={linkImage}
+          image={product.thumbnailImage}
+          alt={product.listCategoryId}
+          onClick={() => navigate("/product/detail/?id=" + product.productId)}
         />
         <CardContent>
           <Box
@@ -43,7 +44,7 @@ function ProductThumbnail(props) {
           >
             <Stack spacing={1}>
               <Rating
-                value={product.rating}
+                // value={product.rating}
                 precision={0.1}
                 sx={{ fontSize: 30 }}
                 //   value={value}
@@ -66,7 +67,7 @@ function ProductThumbnail(props) {
             </Stack>
           </Box>
           <Typography gutterBottom variant="h5" component="div" color="#E8630A">
-            {product.name}
+            {product.productName}
           </Typography>
           <Typography variant="body2">{product.description}</Typography>
         </CardContent>
