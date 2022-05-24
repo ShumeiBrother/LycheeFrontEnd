@@ -3,7 +3,6 @@ import { Box, Grid } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { Fragment, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import Products from "../../../DUMMY_DATA/Products";
 import productApi from "../../../HTTP_Request/ProductsAPI";
 import ProductThumbnail from "./ProductThumbnail";
 
@@ -19,8 +18,8 @@ const StyledBox = styled(Box)({
 function ProductList() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const category = queryParams.get("category");
-  console.log(category);
+  const categoryId = queryParams.get("categoryId");
+  console.log(categoryId);
   // let productsFiltered = [...Products];
   // if (category)
   //   productsFiltered = productsFiltered.filter(
@@ -29,11 +28,14 @@ function ProductList() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchProduct = async () => {
-      const response = await productApi.getAllProductThumbnails();
+      const params = categoryId && {
+        categoryId: categoryId,
+      };
+      const response = await productApi.getProductThumbnails(params);
       setProducts(response);
     };
     fetchProduct();
-  }, [category]);
+  }, [categoryId]);
   return (
     <Fragment>
       <StyledBox flex={5}>
