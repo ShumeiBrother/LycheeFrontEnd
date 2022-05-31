@@ -5,6 +5,8 @@ import { Fragment, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import productApi from "../../../HTTP_Request/ProductsAPI";
 import ProductThumbnail from "./ProductThumbnail";
+import InfiniteScroll from "react-infinite-scroller";
+import { Button, CircularProgress } from "@mui/material";
 
 const StyledBox = styled(Box)({
   display: "flex",
@@ -25,19 +27,49 @@ function ProductList() {
   //   productsFiltered = productsFiltered.filter(
   //     (product) => product.category === category
   //   );
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasmore] = useState(true);
+  const [fetching, setFetching] = useState(false);
   const [products, setProducts] = useState([]);
-  useEffect(() => {
-    const fetchProduct = async () => {
-      const params = categoryId && {
-        categoryId: categoryId,
-      };
-      const response = await productApi.getProductThumbnails(params);
-      setProducts(response);
-    };
-    fetchProduct();
-  }, [categoryId]);
+  // useEffect(() => {
+  //   const fetchProduct = async () => {
+  //     setPage(1);
+  //     const params = categoryId && {
+  //       categoryId: categoryId,
+  //       itemPerPage: 10,
+  //       page: 1,
+  //     };
+  //     const response = await productApi.getProductThumbnails(params);
+  //     setProducts(response);
+  //   };
+  //   fetchProduct();
+  // }, [categoryId]);
+  async function loadMore() {
+    console.log("loadmore");
+    if (fetching) return;
+    setFetching(true);
+    setPage(page + 1);
+    const response = await productApi.getProductThumbnails({
+      itemPerPage: 10,
+      page: page,
+      categoryId: categoryId,
+    });
+    console.log(response);
+    if (response.length == 0) {
+      console.log("no has more");
+      setHasmore(false);
+    }
+    setProducts([...products, ...response]);
+    setFetching(false);
+  }
   return (
-    <Fragment>
+    // <Box height={700} overflow="auto">
+    <InfiniteScroll
+      pageStart={1}
+      loadMore={loadMore}
+      hasMore={hasMore}
+      loader={<CircularProgress color="success" />}
+    >
       <StyledBox flex={5}>
         <Grid container spacing={2}>
           {products.map((product) => {
@@ -47,10 +79,10 @@ function ProductList() {
               </Grid>
             );
           })}
-          <Box sx={{ height: { xs: 550, sm: 450 } }}></Box>
+          {/* <Box sx={{ height: { xs: 550, sm: 450 } }}></Box> */}
         </Grid>
       </StyledBox>
-    </Fragment>
+    </InfiniteScroll>
   );
 }
 
