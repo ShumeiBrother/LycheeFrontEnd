@@ -9,8 +9,8 @@ function App() {
     <ThemeProvider theme={ConfiguredTheme}>
       <Layout>
         <Routes>
-          <Route path="/" element={<Navigate to="/product" />}></Route>
-          <Route path="/product/*" element={<ProductPage />} />
+          <Route path="/" element={<Navigate to="/products" />}></Route>
+          <Route path="/products/*" element={<ProductPage />} />
         </Routes>
       </Layout>
     </ThemeProvider>

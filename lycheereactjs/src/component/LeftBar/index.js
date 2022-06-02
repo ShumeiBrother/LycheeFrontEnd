@@ -21,8 +21,9 @@ function LeftBar() {
             </Typography>
           </Stack>
         </Link>
+        <Divider />
         <Link
-          to="/product/?categoryId=18000001"
+          to="/products/category?categoryId=18000001"
           style={{ textDecoration: "none", color: "black" }}
         >
           <Stack direction="row" alignItems={"center"} spacing={1}>
@@ -38,7 +39,7 @@ function LeftBar() {
         </Link>
         <Divider />
         <Link
-          to="/product/?categoryId=18000002"
+          to="/products/category?categoryId=18000002"
           style={{ textDecoration: "none", color: "black" }}
         >
           <Stack direction="row" alignItems={"center"} spacing={1}>
@@ -55,7 +56,7 @@ function LeftBar() {
         <Divider />
 
         <NavLink
-          to="/product/?categoryId=18000003"
+          to="/products/category?categoryId=18000003"
           style={{ textDecoration: "none", color: "black" }}
         >
           <Stack direction="row" alignItems={"center"} spacing={1}>
