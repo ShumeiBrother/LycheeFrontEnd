@@ -4,8 +4,10 @@ import RemoveCircleOutlinedIcon from "@mui/icons-material/RemoveCircleOutlined";
 import { Rating, Stack, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { Box } from "@mui/system";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Products from "../../DUMMY_DATA/Products";
+import productApi from "../../HTTP_Request/ProductsAPI";
 
 const StyledBox = styled(Box)({
   display: "flex",
@@ -32,14 +34,20 @@ function ProductDetail() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const productId = queryParams.get("id");
-  let products = [...Products];
-  let product;
-  if (productId)
-    product = products.filter((product) => product.id === productId)[0];
-  console.log(product);
-  const linkImage = require("../../Static/Images/Products/".concat(
-    product.image
-  ));
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    getProduct();
+  }, [productId]);
+
+  async function getProduct() {
+    const response = await productApi.getProduct({
+      productId: productId,
+    });
+    console.log(response);
+    setProduct(response);
+  }
+
   return (
     <StyledBox flex={5}>
       <Stack
@@ -48,7 +56,7 @@ function ProductDetail() {
         spacing={{ xs: -10, sm: 3 }}
       >
         <Box flex={1}>
-          <StyledImage src={linkImage} />
+          <StyledImage src={product.thumbnailImage} />
           <Rating
             value={4}
             precision={0.5}

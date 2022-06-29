@@ -9,7 +9,7 @@ function LeftBar() {
   return (
     <Box flex={1} sx={{ display: { xs: "none", sm: "block" } }}>
       <Stack direction={"column"} spacing={3} sx={{ padding: 3 }}>
-        <Link to="/product/" style={{ textDecoration: "none", color: "black" }}>
+        {/* <Link to="/product/" style={{ textDecoration: "none", color: "black" }}>
           <Stack direction="row" alignItems={"center"} spacing={1}>
             <SVGOrange size={40} color={"orange"} />
             <Typography
@@ -21,7 +21,7 @@ function LeftBar() {
             </Typography>
           </Stack>
         </Link>
-        <Divider />
+        <Divider /> */}
         <Link
           to="/products/category?categoryId=18000001"
           style={{ textDecoration: "none", color: "black" }}

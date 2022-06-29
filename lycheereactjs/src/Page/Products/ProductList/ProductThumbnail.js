@@ -34,7 +34,7 @@ function ProductThumbnail(props) {
           // image={linkImage}
           image={product.thumbnailImage}
           alt={product.listCategoryId}
-          onClick={() => navigate("/product/detail/?id=" + product.productId)}
+          onClick={() => navigate("/products/detail/?id=" + product.productId)}
         />
         <CardContent>
           <Box

@@ -25,7 +25,7 @@ function Category() {
     >
       <StyledItem value={"green"}>
         <Link
-          to="/product/?category=green"
+          to="/products/category?categoryId=18000001"
           style={{ textDecoration: "none", color: "black" }}
         >
           <Stack direction="row" alignItems={"center"} spacing={1}>
@@ -38,7 +38,7 @@ function Category() {
       </StyledItem>
       <StyledItem value={"cloth"}>
         <Link
-          to="/product/?category=cloth"
+          to="/products/category?categoryId=18000002"
           style={{ textDecoration: "none", color: "black" }}
         >
           <Stack direction="row" alignItems={"center"} spacing={1}>
@@ -51,7 +51,7 @@ function Category() {
       </StyledItem>
       <StyledItem value={"dehydrated"}>
         <Link
-          to="/product/?category=dehydrated"
+          to="/products/category?categoryId=18000003"
           style={{ textDecoration: "none", color: "black" }}
         >
           <Stack direction="row" alignItems={"center"} spacing={1}>
